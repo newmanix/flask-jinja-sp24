@@ -4,9 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+      /* makes images in div be size of box */
+      .flexible img{
+          width:100%;
+       }
+
+       /* uses flexbox to control size of child elements */
+       .flexible{
+          display: flex;
+          justify-content: space-evenly;
+       }
+    </style>
 
   </head>
   <body>
+    <nav class="w3-bar w3-black">
+      <a href="/" class="w3-bar-item w3-button">Home</a>
+      <a href="/about" class="w3-bar-item w3-button">About</a>
+      <a href="#" class="w3-bar-item w3-button">Link 2</a>
+      <a href="#" class="w3-bar-item w3-button">Link 3</a>
+    </nav>
     {% block content %}
     {% endblock %}
   </body>
