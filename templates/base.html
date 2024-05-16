@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/python/cpython/main/PC/icons/python.ico">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/forms.css') }}">
     <style>
       /* makes images in div be size of box */
       .flexible img{
@@ -16,6 +19,11 @@
           display: flex;
           justify-content: space-evenly;
        }
+      /* gives color to our movie stars */
+      .checked {
+        color: gold;
+      }
+
     </style>
 
   </head>
@@ -23,8 +31,11 @@
     <nav class="w3-bar w3-black">
       <a href="/" class="w3-bar-item w3-button">Home</a>
       <a href="/about" class="w3-bar-item w3-button">About</a>
-      <a href="#" class="w3-bar-item w3-button">Link 2</a>
-      <a href="#" class="w3-bar-item w3-button">Link 3</a>
+      <a href="/movies" class="w3-bar-item w3-button">Movies</a>
+      <a href="/register" class="w3-bar-item w3-button">Register</a>
+      <a href="/users" class="w3-bar-item w3-button">Users</a>
+      <a href="/recipes" class="w3-bar-item w3-button">Recipes</a>
+      <a href="/admin/" class="w3-bar-item w3-button">Admin</a>
     </nav>
     {% block content %}
     {% endblock %}

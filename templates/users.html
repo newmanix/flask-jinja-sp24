@@ -1,0 +1,18 @@
+{% extends "base.html" %} 
+{% block content %} 
+ <table class="w3-table-all w3-hoverable">
+  <tr>
+    <th>Last Name</th>
+    <th>First Name</th>
+    <th>Email</th>
+  </tr>
+   {% for user in users %}
+  <tr>
+    <td>{{ user.first_name }}</td>
+    <td>{{ user.last_name }}</td>
+    <td>{{ user.email }}</td>
+  </tr>
+   {% endfor %}
+</table>
+
+{% endblock %} 

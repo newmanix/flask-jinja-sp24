@@ -1,0 +1,20 @@
+{% extends "base.html" %} 
+{% block content %} 
+
+<ul style="list-style:none">
+{% for movie in movies %}
+  <li>
+    <b>{{ movie.title }}</b> is a {{ movie.genre }} movie and it's rating is {{ movie.rating }} {{ movie.stars|safe }}
+    {% if movie.rating > 3 %}🙂{% else %}🙁{% endif %}
+  </li>
+{% endfor %}
+</ul>
+<div>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star"></span>
+  <span class="fa fa-star"></span>
+</div>
+
+{% endblock %}
