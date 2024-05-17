@@ -1,0 +1,16 @@
+<!-- templates/add_recipe.html -->
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Add Recipe</h1>
+    <form method="post" action="{{ url_for('add_recipe') }}">
+        {{ form.hidden_tag() }}
+        <div>{{ form.name.label }}: {{ form.name }}</div>
+        <div>{{ form.author.label }}: {{ form.author }}</div>
+        <div>{{ form.description.label }}: {{ form.description }}</div>
+        <div>{{ form.ingredients.label }}: {{ form.ingredients }}</div>
+        <div>{{ form.instructions.label }}: {{ form.instructions }}</div>
+        <div>{{ form.rating.label }}: {{ form.rating }}</div>
+        <div>{{ form.category_id.label }}: {{ form.category_id }}</div>
+        <div><button type="submit">Add Recipe</button></div>
+    </form>
+{% endblock %}

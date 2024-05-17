@@ -1,0 +1,16 @@
+<!--templates/edit_recipe.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Edit Recipe</h2>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.name.label }} {{ form.name(size=32) }}<br>
+    {{ form.description.label }} {{ form.description(rows=4, cols=32) }}<br>
+    {{ form.ingredients.label }} {{ form.ingredients(rows=4, cols=32) }}<br>
+    {{ form.instructions.label }} {{ form.instructions(rows=4, cols=32) }}<br>
+    {{ form.category_id.label }} {{ form.category_id() }}<br>
+    {{ form.rating.label }} {{ form.rating() }}<br>
+    <input type="submit" value="Update Recipe">
+  </form>
+{% endblock %}
