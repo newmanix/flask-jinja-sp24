@@ -15,5 +15,8 @@
     </tr>
       {% endfor %}
     </table>
-<p><a href="/add_recipe">Add Recipe</a></p>
+{% if current_user.is_authenticated %}
+  <p><a href="/add_recipe">Add Recipe</a></p>
+{% endif %}
+
 {% endblock %}

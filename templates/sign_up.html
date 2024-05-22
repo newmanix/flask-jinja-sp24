@@ -1,0 +1,28 @@
+<!-- templates/sign_up.html -->
+{% extends 'base.html' %}
+{% block content %}
+    <h3>S'il vous plait enregistrez vous</h3>
+<p>If you'd like to add, edit or delete recipes, please sign up below.</p>
+<p>Don't forget to write down your password, as it will be unrecoverable.</p>
+<p>bon appetit!</p>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.first_name.label }}: {{ form.first_name }}
+        </div>
+        <div>
+            {{ form.last_name.label }}: {{ form.last_name }}
+        </div>
+        <div>
+            {{ form.email.label }}: {{ form.email }}
+        </div>
+        <div>
+            {{ form.password.label }}: {{ form.password }}
+        </div>
+        <div>
+            {{ form.confirm_password.label }}: {{ form.confirm_password }}
+        </div>
+        <button type="submit">Register</button>
+    </form>
+
+{% endblock %}

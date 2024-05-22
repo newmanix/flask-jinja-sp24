@@ -1,6 +1,6 @@
 # forms.py
 from flask_wtf import FlaskForm
-from wtforms import StringField, TextAreaField, FloatField, SelectField, DecimalField, validators
+from wtforms import StringField, TextAreaField, FloatField, SelectField, DecimalField, SubmitField, PasswordField, validators
 
 from wtforms.validators import InputRequired
 
@@ -22,3 +22,16 @@ class RecipeEdit(FlaskForm):
     instructions = TextAreaField('Instructions', validators=[validators.DataRequired()])
     category_id = SelectField('Category', coerce=int, validators=[validators.DataRequired()])
     rating = DecimalField('Rating', validators=[validators.NumberRange(min=0, max=5)])
+
+class LoginForm(FlaskForm):
+  email = StringField('Email', validators=[validators.DataRequired(), validators.Email()])
+  password = PasswordField('Password', validators=[validators.DataRequired()])
+  submit = SubmitField('Login')
+
+class RegistrationForm(FlaskForm):
+  first_name = StringField('First Name', validators=[validators.DataRequired()])
+  last_name = StringField('Last Name', validators=[validators.DataRequired()])
+  email = StringField('Email', validators=[validators.DataRequired(), validators.Email()])
+  password = PasswordField('Password', validators=[validators.DataRequired()])
+  confirm_password = PasswordField('Confirm Password', validators=[validators.DataRequired(), validators.EqualTo('password', message='Passwords must match')])
+  submit = SubmitField('Register')
